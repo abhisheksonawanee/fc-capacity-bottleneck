@@ -198,16 +198,6 @@ Tests verify:
 - Utilization bounds
 - Output file generation
 
-## Resume Bullets
-
-For Amazon Operations / Business Analyst roles:
-
-1. **Built end-to-end analytics pipeline** for fulfillment center capacity planning, simulating 56 days of hourly operations data across 4 processing steps (receive, pick, pack, ship) with realistic seasonality, demand variability, and capacity constraints, enabling data-driven bottleneck identification and staffing optimization.
-
-2. **Developed decision-oriented bottleneck detection algorithm** that identifies capacity constraints using utilization thresholds (≥95%) combined with backlog growth and throughput loss metrics, resulting in actionable insights for operations leaders to prioritize resource allocation and reduce service degradation.
-
-3. **Created interactive Streamlit dashboard** with 4 analytical views (Overview, Bottlenecks, Capacity, Staffing) featuring Plotly visualizations, enabling real-time exploration of utilization trends, cycle time analysis, and staffing recommendations with estimated cost impacts to support operational decision-making.
-
 ## License
 
 This project is provided as-is for portfolio and educational purposes.
