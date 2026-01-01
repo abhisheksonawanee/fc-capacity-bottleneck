@@ -1,0 +1,81 @@
+# Fulfillment Center Capacity Planning Configuration
+
+# Data Generation Parameters
+start_date: "2025-01-01"
+num_days: 56
+random_state: 42
+
+# Operational Steps
+steps:
+  - receive
+  - pick
+  - pack
+  - ship
+
+# Demand Parameters
+demand:
+  base_demand_mean: 6000  # units per day
+  hourly_seasonality:
+    # Hour of day multipliers (0-23)
+    peak_hours: [10, 11, 12, 13, 14, 15, 16, 17, 18, 19]  # 10 AM - 7 PM
+    peak_multiplier: 1.3
+    off_peak_multiplier: 0.7
+  day_of_week:
+    weekday_multiplier: 1.2
+    weekend_multiplier: 0.6
+  promo_days: 3  # Number of random promo days
+  promo_multiplier: 1.25
+
+# Capacity Parameters
+capacity:
+  step_capacity_base:
+    receive: 1.0
+    pick: 0.9
+    pack: 0.85
+    ship: 1.1
+  variability_std: 0.15  # Standard deviation for capacity variability
+  downtime_probability: 0.02  # 2% chance of capacity drop per hour
+  downtime_severity: 0.3  # 30% capacity reduction when downtime occurs
+
+# Labor Productivity (Units Per Hour)
+uph_by_step:
+  receive: 140
+  pick: 110
+  pack: 90
+  ship: 150
+
+# Labor Cost
+wage_per_hour: 22.0
+
+# Service Targets
+service_target: 0.95  # 95% of demand should be processed same hour
+
+# Bottleneck Detection
+bottleneck_threshold_util: 0.95  # Utilization threshold for bottleneck
+
+# Cycle Time Parameters (minutes)
+cycle_time:
+  base_min:
+    receive: 15
+    pick: 25
+    pack: 20
+    ship: 10
+  congestion_multiplier_max: 2.5  # Max cycle time multiplier under high congestion
+
+# Data Processing
+data:
+  raw_file: "data/raw/fc_hourly_ops.csv"
+  processed_file: "data/processed/fc_hourly_ops_clean.csv"
+  step_hourly_file: "data/processed/step_hourly_metrics.csv"
+  step_daily_file: "data/processed/step_daily_metrics.csv"
+  site_daily_file: "data/processed/site_daily_metrics.csv"
+  bottlenecks_file: "data/processed/bottlenecks.csv"
+  staffing_file: "data/processed/staffing_recommendations.csv"
+
+# Reports
+reports:
+  bottleneck_summary: "reports/bottleneck_summary.md"
+  staffing_summary: "reports/staffing_summary.md"
+  kpis_json: "reports/kpis.json"
+  kpis_md: "reports/kpis.md"
+

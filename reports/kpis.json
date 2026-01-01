@@ -1,0 +1,33 @@
+{
+  "avg_utilization_by_step": {
+    "pack": 0.999999994608058,
+    "pick": 0.9999677101609599,
+    "receive": 0.9967556449585367,
+    "ship": 0.9138229844185801
+  },
+  "total_throughput_processed": 1150973.1497594854,
+  "total_throughput_loss": 63191614.29521911,
+  "avg_cycle_time_by_step": {
+    "pack": 49.9999994608058,
+    "pick": 62.49596377012,
+    "receive": 37.310789423377514,
+    "ship": 22.277593168272627
+  },
+  "p90_cycle_time_by_step": {
+    "pack": 49.99999949070421,
+    "pick": 62.4999994115195,
+    "receive": 37.499999699989175,
+    "ship": 24.99999978687572
+  },
+  "bottleneck_share_by_step": {
+    "pack": 26.514105346222134,
+    "pick": 26.494377589268097,
+    "receive": 26.198461234957588,
+    "ship": 20.79305582955218
+  },
+  "extra_headcount_hours_needed": 660386,
+  "estimated_cost_to_hit_target": 14528492.0,
+  "overall_avg_utilization": 0.9776365835365338,
+  "overall_avg_service_level": 214.09470791657094,
+  "total_days": 56
+}
